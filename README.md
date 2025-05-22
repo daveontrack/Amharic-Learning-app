@@ -60,8 +60,8 @@ Welcome to the Amharic Learning App! This application is designed to help users 
 ### Setup
 
 1.  Clone the repository (if applicable):
-        git clone <your-repository-url>
-    cd <project-directory>
+        git clone (https://github.com/daveontrack/Amharic-Learning-app)
+          cd Amharic-Learning-app
     
 2.  Install dependencies:
         npm install
@@ -101,7 +101,7 @@ yarn start
 
 Key directories:
 
-Dave, [5/22/2025 11:09 AM]
+
 *   src/app/: Contains all the routes, pages, and API endpoints using the Next.js App Router.
     *   api/: Server-side API routes.
     *   (page-name)/: Folders for each page/section of the app.
