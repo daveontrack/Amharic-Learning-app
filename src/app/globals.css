@@ -1,0 +1,141 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Main Theme: Cool Gray, Deep Purple, Amber/Orange Accent */
+    --background: 220 10% 96%; /* Very Light Cool Gray (#F3F4F6) */
+    --foreground: 220 15% 25%; /* Dark Slate Gray */
+    
+    --card: 220 10% 99%; /* Slightly lighter gray for cards */
+    --card-foreground: 220 15% 25%;
+
+    --popover: 220 10% 99%;
+    --popover-foreground: 220 15% 25%;
+
+    --primary: 260 50% 45%; /* Deep Purple (#5E3A8A) */
+    --primary-foreground: 220 10% 98%; /* Very Light Gray for text on primary */
+
+    --secondary: 260 40% 65%; /* Lighter Purple */
+    --secondary-foreground: 220 10% 98%;
+
+    --muted: 220 10% 90%; /* Muted Cool Gray */
+    --muted-foreground: 220 10% 45%; /* Muted Slate Gray */
+
+    --accent: 30 90% 55%; /* Bright Amber/Orange (#F9A825) */
+    --accent-foreground: 220 15% 15%; /* Dark text on accent */
+
+    --destructive: 0 75% 55%; /* Clear Red */
+    --destructive-foreground: 0 0% 100%; /* White */
+    
+    --border: 220 10% 85%; /* Light cool gray border */
+    --input: 220 10% 92%; /* Light cool gray input background */
+    --ring: 260 50% 45%; /* Deep Purple for focus rings */
+    
+    --chart-1: 260 50% 55%;   /* Purple-ish */
+    --chart-2: 30 80% 60%;  /* Orange-ish */
+    --chart-3: 230 40% 60%;  /* Blue-ish Purple */
+    --chart-4: 220 15% 75%;  /* Lighter Cool Gray */
+    --chart-5: 260 30% 35%;   /* Darker Purple */
+    --radius: 0.5rem;
+
+    /* Sidebar specific theme - New Warm Brown/Orange Theme */
+    --sidebar-background: 30 30% 20%; /* Dark Brown (#4A3B31) */
+    --sidebar-foreground: 35 40% 90%; /* Light Beige/Cream (#F0E6D8) */
+    --sidebar-primary: 30 30% 30%;    /* Slightly Lighter Brown (if used for primary elements in sidebar) */
+    --sidebar-primary-foreground: 35 40% 95%; /* Very Light Beige/Cream (text on sidebar-primary) */
+    --sidebar-accent: 25 80% 50%;     /* Muted Orange (#E67E22) */
+    --sidebar-accent-foreground: 30 30% 10%; /* Very Dark Brown (for text on active/hover BG) */
+    --sidebar-border: 30 30% 15%;     /* Slightly darker brown border */
+    --sidebar-ring: 25 80% 55%;       /* Muted Orange for focus rings */
+  }
+
+  .dark {
+    /* Dark Theme - Adjusting for new main theme */
+    --background: 220 15% 12%; /* Dark Slate Gray */
+    --foreground: 220 10% 88%; /* Light Cool Gray text */
+    
+    --card: 220 15% 16%; /* Darker card background */
+    --card-foreground: 220 10% 88%;
+
+    --popover: 220 15% 16%;
+    --popover-foreground: 220 10% 88%;
+
+    --primary: 260 60% 60%; /* Brighter Deep Purple for dark mode */
+    --primary-foreground: 220 10% 10%; 
+
+    --secondary: 260 45% 45%; /* Muted Purple */
+    --secondary-foreground: 220 10% 88%;
+
+    --muted: 220 15% 22%; /* Darker Gray */
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 30 95% 65%; /* Brighter Amber/Orange */
+    --accent-foreground: 220 15% 10%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 95%;
+    
+    --border: 220 15% 28%; 
+    --input: 220 15% 28%;
+    --ring: 260 60% 60%;
+
+    --chart-1: 260 60% 65%;
+    --chart-2: 30 85% 70%;
+    --chart-3: 230 45% 65%;
+    --chart-4: 220 10% 70%;
+    --chart-5: 260 40% 45%;
+
+    /* Sidebar specific theme - Dark Mode - Warm Brown/Orange (adjusted for dark mode) */
+    --sidebar-background: 30 30% 15%; /* Even Darker Brown */
+    --sidebar-foreground: 35 40% 90%; /* Light Beige/Cream */
+    --sidebar-primary: 30 30% 25%;    /* Slightly Lighter Dark Brown */
+    --sidebar-primary-foreground: 35 40% 95%; /* Very Light Beige/Cream */
+    --sidebar-accent: 25 85% 55%;     /* Brighter Muted Orange */
+    --sidebar-accent-foreground: 30 30% 5%;  /* Almost Black (text on active/hover BG) */
+    --sidebar-border: 30 30% 10%;     /* Very dark brown border */
+    --sidebar-ring: 25 85% 60%;       /* Brighter Muted Orange for focus rings */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-animated-gradient-home {
+    background: linear-gradient(
+      -45deg,
+      hsl(var(--primary) / 0.05),
+      hsl(var(--accent) / 0.05),
+      hsl(var(--background)) 40%, /* Make background dominant */
+      hsl(var(--background)) 60%, /* Make background dominant */
+      hsl(var(--secondary) / 0.05)
+    );
+    background-size: 400% 400%;
+    animation: animateGradientXY 25s ease infinite;
+  }
+
+  @keyframes animateGradientXY {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
